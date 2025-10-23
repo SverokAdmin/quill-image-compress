@@ -1,12 +1,11 @@
 {
-	"name": "quill-image-compress",
+	"name": "@sverokadmin/quill-image-compress",
 	"description": "A Quill rich text editor Module which compresses images uploaded to the editor",
-	"version": "1.2.3",
+	"version": "1.0.0",
 	"main": "dist/quill.imageCompressor.min.js",
 	"types": "types/index.d.ts",
-	"homepage": "https://benwinding.github.io/quill-image-compress/src/demo.html",
-	"repository": "https://github.com/benwinding/quill-image-compress",
-	"author": "Ben Winding <ben.winding@gmail.com>",
+	"repository": "https://github.com/SverokAdmin/quill-image-compress",
+	"author": "Emil Forslund <emil@sverokadmin.se>",
 	"license": "MIT",
 	"scripts": {
 		"watch": "webpack --watch --progress --mode development",
