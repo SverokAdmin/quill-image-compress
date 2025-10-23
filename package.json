@@ -1,7 +1,7 @@
 {
 	"name": "@sverokadmin/quill-image-compress",
 	"description": "A Quill rich text editor Module which compresses images uploaded to the editor",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"main": "dist/quill.imageCompressor.min.js",
 	"types": "types/index.d.ts",
 	"repository": "https://github.com/SverokAdmin/quill-image-compress",
@@ -11,14 +11,14 @@
 		"watch": "webpack --watch --progress --mode development",
 		"start": "webpack-dev-server --hot --port 8001 --mode development",
 		"build-dev": "webpack --mode development",
-		"build": "webpack --mode production"
+		"build": "webpack --mode production && tsc -p tsconfig.json --emitDeclarationOnly",
+		"prepare": "npm run build"
 	},
 	"files": [
-		"src/*.html",
-		"src/*.js",
+		"dist/quill.imageCompressor.min.js",
 		"types",
-		"dist",
-		"README.md"
+		"README.md",
+		"LICENSE"
 	],
 	"keywords": [
 		"quill",
@@ -28,7 +28,7 @@
 		"compression",
 		"reduce"
 	],
-	"dependencies": {
+	"peerDependencies": {
 		"quill": "^1.3.7"
 	},
 	"devDependencies": {
