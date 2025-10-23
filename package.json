@@ -1,7 +1,7 @@
 {
 	"name": "@sverokadmin/quill-image-compress",
 	"description": "A Quill rich text editor Module which compresses images uploaded to the editor",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"main": "dist/quill.imageCompressor.min.js",
 	"types": "types/index.d.ts",
 	"repository": "https://github.com/SverokAdmin/quill-image-compress",
@@ -36,6 +36,8 @@
 		"@babel/plugin-proposal-class-properties": "^7.8.3",
 		"@babel/plugin-transform-runtime": "^7.8.3",
 		"@babel/preset-env": "^7.8.7",
+		"@types/glob": "^7.2.0",
+		"@types/minimatch": "^3.0.5",
 		"@types/node": "^14.14.22",
 		"@types/quill": "^2.0.9",
 		"babel-loader": "^8.0.6",
