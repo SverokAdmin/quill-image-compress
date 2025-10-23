@@ -5,7 +5,7 @@ export class ConsoleLogger {
   ) {}
 
   prefixString() {
-    return `</> quill-image-compress: `;
+    return `quill-image-compress: `;
   }
   get log() {
     if (!this.debug) {

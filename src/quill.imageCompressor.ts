@@ -127,6 +127,6 @@ class imageCompressor {
   }
 }
 
-(window as any)['imageCompressor'] = imageCompressor;
+//(window as any)['imageCompressor'] = imageCompressor;
 export { imageCompressor };
 export default imageCompressor;

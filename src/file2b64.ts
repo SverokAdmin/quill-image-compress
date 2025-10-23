@@ -14,7 +14,10 @@ export async function file2b64(file: Blob) {
       },
       false
     );
+      fileReader.addEventListener("error", () => reject(fileReader.error), false);
+      fileReader.addEventListener("abort", () => reject(new Error("aborted")), false);
   });
+
   fileReader.readAsDataURL(file);
   return promise;
 }

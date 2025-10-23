@@ -102,5 +102,5 @@ function getDimensions(
     const newWidth = Math.floor((inputWidth / inputHeight) * newHeight);
     return [newWidth, newHeight];
   }
-  return [inputHeight, inputWidth];
+  return [inputWidth, inputHeight];
 }
