@@ -1,6 +1,5 @@
-import imageCompressor from "./quill.imageCompressor";
-import { OptionsObject } from "./options.object";
+import imageCompressor from "./quill.imageCompressor.js";
 
-export { imageCompressor }
-export { OptionsObject as ImageCompressorOptions }
+export { imageCompressor };
+export type { OptionsObject as ImageCompressorOptions } from "./options.object.js";
 export default imageCompressor;

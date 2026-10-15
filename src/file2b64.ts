@@ -1,23 +1,36 @@
 export async function file2b64(file: Blob) {
   const fileReader = new FileReader();
 
-  const promise = new Promise<string>((resolve, reject) => {
-    fileReader.addEventListener(
-      "load",
-      () => {
-        const base64ImageSrc = fileReader.result?.toString();
-        if (!base64ImageSrc) {
-          reject('could not convert file to base64');
-        } else {
-          resolve(base64ImageSrc);
-        }
-      },
-      false
-    );
-      fileReader.addEventListener("error", () => reject(fileReader.error), false);
-      fileReader.addEventListener("abort", () => reject(new Error("aborted")), false);
+  return new Promise<string>((resolve, reject) => {
+    const cleanup = () => {
+      fileReader.removeEventListener("load", onLoad);
+      fileReader.removeEventListener("error", onError);
+      fileReader.removeEventListener("abort", onAbort);
+    };
+    const onLoad = () => {
+      cleanup();
+      if (typeof fileReader.result !== "string" || !fileReader.result) {
+        reject(new Error("Could not convert file to base64"));
+      } else {
+        resolve(fileReader.result);
+      }
+    };
+    const onError = () => {
+      cleanup();
+      reject(fileReader.error ?? new Error("Could not read file"));
+    };
+    const onAbort = () => {
+      cleanup();
+      reject(new Error("File reading aborted"));
+    };
+    fileReader.addEventListener("load", onLoad);
+    fileReader.addEventListener("error", onError);
+    fileReader.addEventListener("abort", onAbort);
+    try {
+      fileReader.readAsDataURL(file);
+    } catch (error) {
+      cleanup();
+      reject(error);
+    }
   });
-
-  fileReader.readAsDataURL(file);
-  return promise;
 }

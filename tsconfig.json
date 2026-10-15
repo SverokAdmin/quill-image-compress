@@ -1,19 +1,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
     "strict": true,
     "declaration": true,
-    "module": "commonjs",
-    "target": "es5",
-    "allowJs": true,
-    "checkJs": false,
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ES2020",
+    "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "outDir": "types",
-    "lib": ["es2017", "dom"]
+    "rootDir": "src",
+    "outDir": "dist/types",
+    "types": ["node"],
+    "lib": ["es2020", "dom"]
   },
   "include": ["src/index.ts"]
 }
